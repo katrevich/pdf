@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      list-style-image: none;
+      font-family: 'Dejavu Sans', sans-serif;
+      color: #000000;
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100% !important;
+      height: 100% !important;
+      zoom: 0.7;
+    }
+
+    body {
+      -webkit-print-color-adjust: exact !important;
+      color-adjust: exact;
+      margin: 0px;
+      padding: 0px;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .page-header {
+      margin: 0 0 70px;
+      overflow: hidden;
+    }
+
+    .logo {
+      float: right;
+      width: 100px;
+    }
+
+    .page-header h1 {
+      font-size: 19px;
+      margin: 5px 0 0 5px;
+      float: left;
+    }
+
+    .overview-section {
+      margin: 0 0 30px;
+    }
+
+    .overview-section-title {
+      font-size: 23px;
+      margin: 0 0 20px;
+      padding: 0 5px;
+    }
+
+    .matching-result-line {
+      font-size: 12px;
+      margin: 0 0 20px;
+      padding: 0 5px;
+      word-break: break-word;
+    }
+
+    .matching-result-line strong {
+      font-size: 15px;
+    }
+
+    .candidate-info {
+      margin: 0 0 50px;
+      padding: 0 5px;
+    }
+
+    .candidate-info th {
+      text-align: left;
+      padding: 3px 20px 3px 0;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .candidate-info td {
+      text-align: left;
+      padding: 3px 0;
+      font-size: 12px;
+    }
+
+    .qna {
+      border-bottom: 1px solid;
+      padding: 0 0 30px;
+      margin: 0 0 30px;
+    }
+
+    .columnes {
+      columns: 2 auto;
+      column-gap: 50px;
+    }
+
+    .qna-item {
+      margin: 0 0 20px;
+      width: 100%;
+      padding: 5px;
+      page-break-inside: avoid;
+    }
+
+    .qna-question {
+      font-size: 13px;
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+
+    .qna-answer {
+      font-size: 12px;
+    }
+
+    .score-table {
+      margin: 0 0 30px;
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      page-break-inside: avoid;
+    }
+
+    .separated-module{
+      margin-bottom: 30px;
+      border-bottom: 1px solid;
+    }
+
+    .score-table thead th {
+      font-size: 15px;
+      font-weight: bold;
+      text-align: left;
+      border: 0;
+      padding: 0 5px 15px 5px;
+    }
+
+    .score-table thead th.score-value {
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .score-table thead th+th {
+      text-align: right;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .score-table thead th span {
+      color: #aeaeae;
+    }
+
+    .score-table tbody td {
+      font-size: 11px;
+      padding: 5px;
+      border: 0;
+    }
+
+    .score-table tbody td+td {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .score-table tbody tr:nth-child(even) td {
+      background-color: #f1f1f1;
+      -webkit-print-color-adjust: exact !important;
+      color-adjust: exact;
+    }
+
+    .score-table img {
+      width: 20px;
+      vertical-align: middle;
+      margin: 0 5px 0 0;
+      position: relative;
+      top: -1px;
+    }
+
+    .locations-header{
+      padding: 5px;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+
+    .locations-list {
+      font-size: 11px;
+      list-style: none;
+      list-style-image: none;
+      margin: 0 0 30px;
+      padding: 0;
+    }
+
+    .locations-list li {
+      padding: 5px;
+      margin: 0;
+    }
+
+    .score-header {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0 0 15px;
+    }
+
+    .open-questions .score-header {
+      padding: 0 5px;
+    }
+
+    .open-questions .qna {
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-footer {
+      font-size: 10px;
+    }
+
+    .page-footer .description {
+      font-weight: bold;
+      font-size: 12px;
+      margin: 0 0 5px;
+    }
+
+    .page-footer .copyright {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <img class="logo"
+      src="data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22utf-8%22%3F%3E%3C!-- Generator%3A Adobe Illustrator 21.0.2%2C SVG Export Plug-In . SVG Version%3A 6.00 Build 0)  --%3E%3Csvg version%3D%221.1%22 id%3D%22Layer_1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22 x%3D%220px%22 y%3D%220px%22%09 viewBox%3D%220 0 286 83.1%22 style%3D%22enable-background%3Anew 0 0 286 83.1%3B%22 xml%3Aspace%3D%22preserve%22%3E%3Cstyle type%3D%22text%2Fcss%22%3E%09.st0%7Bfill%3A%23212121%3B%7D%3C%2Fstyle%3E%3Cg%3E%09%3Cg%3E%09%09%3Cpath class%3D%22st0%22 d%3D%22M30.2%2C29.7c-5.2%2C0-12.3%2C1.1-17.3%2C2.5c0%2C0%2C1.3-27.4-12.8-32.2c3.6%2C9.3%2C2.9%2C28.8%2C2.9%2C29.8v49.6%09%09%09c0%2C0.9%2C0.7%2C1.4%2C1.5%2C1.4h8c0.9%2C0%2C1.4-0.6%2C1.4-1.4v-40c0%2C0%2C7.3-1.9%2C14.5-1.9c5.8%2C0%2C7.7%2C2.1%2C7.7%2C7.4v34.5c0%2C0.9%2C0.6%2C1.4%2C1.5%2C1.4h7.9%09%09%09c0.9%2C0%2C1.4-0.6%2C1.4-1.4v-36C47%2C33%2C41.3%2C29.7%2C30.2%2C29.7z M96%2C32.3c-3-1.6-7.5-2.6-14.3-2.6c-9.4%2C0-18%2C2.2-20.7%2C3.1%09%09%09c-0.5%2C0.2-1.1%2C0.5-1.1%2C1.3v0.3l1.2%2C5.3c0.1%2C0.6%2C0.6%2C0.8%2C1%2C0.8c0.3%2C0%2C0.5-0.1%2C0.7-0.1c3.3-0.8%2C10.1-2.7%2C17-2.7c3.8%2C0%2C6.3%2C0.3%2C7.9%2C1%09%09%09c2.8%2C1.1%2C3%2C3.2%2C3%2C6.1v3.5l-17.5%2C2.9c-8.5%2C1.4-16%2C2.5-16%2C14.9c0%2C15.2%2C13.2%2C16%2C22.8%2C16c5.3%2C0%2C9.8-0.6%2C13-1.3%09%09%09c6.6-1.5%2C8.6-2.9%2C8.6-9.9V44.6C101.4%2C39.5%2C101%2C35%2C96%2C32.3z M90.6%2C73.2c-2.8%2C1-6.4%2C1.5-10.4%2C1.5c-5.2%2C0-11.9-0.6-11.9-8.7%09%09%09c0-6.7%2C4-7.1%2C8.2-7.8l14.1-2.3V73.2z M140%2C30c-0.9-0.2-0.7-0.2-2.2-0.2h-1.6c-5.2%2C0.1-12.1%2C1.1-16.3%2C2.7c-4.1%2C1.4-5.9%2C2.6-5.9%2C6.5%09%09%09v40.5c0%2C0.9%2C1.3%2C1.4%2C1.5%2C1.4h8c0.9%2C0%2C1.4-0.6%2C1.4-1.4V39.8c3.7-0.9%2C8.8-1.5%2C14.7-1.5c1.2%2C0%2C1.3-0.7%2C1.3-1.4v-5.4%09%09%09C141.1%2C30.4%2C140.4%2C30.1%2C140%2C30z M191.9%2C31h-8.4c-1.1%2C0-1.6%2C0.5-1.9%2C1.4l-10.4%2C41.4h-2.5L157%2C32.4c-0.3-1-0.7-1.4-1.8-1.4H147%09%09%09c-0.8%2C0-1.3%2C0.7-1.3%2C1.4c0%2C0.2%2C0.1%2C0.4%2C0.1%2C0.6l14.8%2C46.4c0.3%2C0.9%2C1%2C1.5%2C1.9%2C1.5h14.6c1%2C0%2C1.6-0.6%2C1.9-1.5l14.2-46.6%09%09%09c0-0.1%2C0.1-0.3%2C0.1-0.4C193.4%2C31.5%2C192.7%2C31%2C191.9%2C31z M222.5%2C29.7c-18.9%2C0-23.3%2C9.1-23.3%2C26.3c0%2C18.2%2C6.7%2C26%2C25.6%2C26%09%09%09c7.1%2C0%2C13.6-1.5%2C17.1-2.9c0.6-0.3%2C1.1-0.7%2C1.1-1.3c0-0.1%2C0-0.3-0.1-0.4l-1.2-4.4c-0.3-0.9-0.7-1.1-1.3-1.1c-0.1%2C0-0.3%2C0-0.5%2C0.1%09%09%09c-3.6%2C1-7.7%2C2.3-13.8%2C2.3c-5.8%2C0-9.7-0.9-12.4-3.4c-2.3-2.2-3.5-4.8-3.6-9.5h33.5c1.1%2C0%2C1.6-1%2C1.6-1.8c0.1-1.4%2C0.1-3.3%2C0.1-4.6%09%09%09c0-7.4-0.9-13.4-3.9-17.7C238.2%2C32.4%2C232.4%2C29.7%2C222.5%2C29.7z M210.3%2C54c0.1-3.2%2C0.1-6.4%2C0.9-9.3c1.3-5.3%2C4.3-7.2%2C11.4-7.2%09%09%09c6.4%2C0%2C9.6%2C1.8%2C11.1%2C7.4c0.8%2C2.9%2C0.9%2C5.8%2C0.9%2C9L210.3%2C54z M282.6%2C30c-0.9-0.2-0.7-0.2-2.2-0.2h-1.6c-5.2%2C0.1-12.1%2C1.1-16.3%2C2.7%09%09%09c-4.1%2C1.4-5.9%2C2.6-5.9%2C6.5v40.5c0%2C0.9%2C1.2%2C1.4%2C1.5%2C1.4h8c0.9%2C0%2C1.4-0.6%2C1.4-1.4V39.8c3.7-0.9%2C8.8-1.5%2C14.7-1.5%09%09%09c1.2%2C0%2C1.3-0.7%2C1.3-1.4v-5.4C283.6%2C30.4%2C283%2C30.1%2C282.6%2C30z%22%2F%3E%09%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+      alt="">
+    <h1>{{{ data.static.header.title }}}</h1>
+  </header>
+  <section class="overview-section">
+    <h2 class="overview-section-title">{{{ data.static.content.personalInfo.title }}}</h2>
+    <div class="matching-result-line"><strong>{{{ data.static.content.matching_score }}}:</strong>
+      {{{ data.dynamic.totalScore }}}</div>
+    <div class="matching-result-line"><strong>{{{ data.static.content.candidate_link }}}:</strong>
+      {{ data.dynamic.link }}</div>
+    <table class="candidate-info">
+      {{#if data.dynamic.candidateInfoData.First_Name }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.First_Name }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.First_Name }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.Middle_Name }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Middle_Name }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Middle_Name }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.Last_Name }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Last_Name }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Last_Name }}</td>
+        </tr>
+      {{/if}}
+      <tr>
+        <th>{{ data.static.content.personalInfo.infoFields.Email }}:</th>
+        <td>{{ data.dynamic.email }}</td>
+      </tr>
+      {{#if data.dynamic.candidateInfoData.Address }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Address }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Address }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.Address_addition }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Address_addition }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Address_addition }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.ZIP__Postal_code }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.ZIP__Postal_code }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.ZIP__Postal_code }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.City }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.City }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.City }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.State__Province__Region }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.State__Province__Region }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.State__Province__Region }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.Country }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Country }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Country }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.Phone_Number }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Phone_Number }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Phone_Number }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.Birth_date }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Birth_date }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Birth_date }}</td>
+        </tr>
+      {{/if}}
+      {{#if data.dynamic.candidateInfoData.Gender }}
+        <tr>
+          <th>{{ data.static.content.personalInfo.infoFields.Gender }}:</th>
+          <td>{{ data.dynamic.candidateInfoData.Gender }}</td>
+        </tr>
+      {{/if}}
+    </table>
+  </section>
+  {{#if data.dynamic.additionalQuestionData}}
+  <section class="overview-section">
+    <h2 class="overview-section-title">{{{ data.static.content.moduleList.candidateInfoAdditional }}}</h2>
+    <ul class="qna columnes">
+      {{#each data.dynamic.additionalQuestionData}}
+      <li class="qna-item">
+        <div class="qna-question">{{{ this.question }}} <img width="12" height="12" style="vertical-align: middle; margin-left: 2px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjBRQMKAlmBGNeAAAAwElEQVRIx+2UMQrCQBBFX4IgCNoYLEWE7bQQsRM78QjewAN4Kg+ghaSMgo1gHSFV7MQiiIKIa7GCwY2EBLHaP8VMMfOYmeKDkodHLlmvLIEabRwkV3wC7tlA8iMiFkxpfe0XzPQNknTAZcOOkBM3Kjg06TOii61m0wCp59v5XveWARiAAfwIUIjVIWv2nCkj6CCygaTmCHUmzLloXqXCZ6za4oZiJYBLDBnQo0GVIhFHAlYs2fJI2+BfTzQAAwB4AjWxOheOFPMGAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA1LTIwVDEwOjQwOjA5KzAyOjAwLOMf3gAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNS0yMFQxMDo0MDowOSswMjowMF2+p2IAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC" alt="flag"></div>
+        <div class="qna-answer">{{{ this.answer }}}</div>
+      </li>
+      {{~/each}}
+    </ul>
+  </section>
+  {{/if}}
+  <section class="overview-section">
+    <div class="columnes">
+      {{#each data.dynamic.moduleResults}}
+        {{#if this.values}}
+          {{#switch "modules" this.type}}
+            {{#case "modules" 'workAvailability'}}
+              <div class="separated-module">
+                <table class="score-table">
+                  <thead>
+                    <tr>
+                      <th class="score-header" colspan="3">
+                        {{lookup ../data.static.content.moduleList this.type}}{{lookup ../data.static.content.normReferenced this.type}}
+                      </th>
+                    </tr>
+                    {{#if this.hours}}
+                      <tr>
+                        <th class="score-value">{{ this.hours }} {{ ../data.static.content.hours_text }}</th>
+                      </tr>
+                    {{/if}}
+                  </thead>
+                  <tbody>
+                    {{#each this.values}}
+                    <tr>
+                      <td>{{ this.name }}</td>
+                      <td></td>
+                      <td>{{ this.value }}</td>
+                    </tr>
+                    {{~/each}}
+                  </tbody>
+                </table>
+              </div>
+            {{/case}}
+            {{#case "modules" 'location'}}
+              <h3 class="locations-header">{{ ../data.static.content.moduleList.location }}</h3>
+              <ul class="locations-list">
+                {{#each this.values}}
+                  <li>{{ this.name }}</li>
+                {{~/each}}
+              </ul>
+            {{/case}}
+            {{#case "modules" 'locationQuestions'}}
+              <div class="open-questions">
+                <div class="score-header">{{ ../data.static.content.moduleList.locationQuestions }}</div>
+                <ul class="qna">
+                  {{#each this.values}}
+                  <li class="qna-item">
+                    <div class="qna-question">{{{ this.name }}}</div>
+                    <div class="qna-answer">{{ this.value }}</div>
+                  </li>
+                  {{~/each}}
+                </ul>
+              </div>
+            {{/case}}
+            {{#case "modules" 'openQuestions'}}
+              <div class="open-questions">
+                <div class="score-header">{{ ../data.static.content.moduleList.openQuestions }}</div>
+                <ul class="qna">
+                  {{#each this.values}}
+                  <li class="qna-item">
+                    <div class="qna-question">{{{ this.name }}}</div>
+                    <div class="qna-answer">{{ this.value }}</div>
+                  </li>
+                  {{~/each}}
+                </ul>
+              </div>
+            {{/case}}
+            {{#default "modules"}}
+              <table class="score-table">
+                <thead>
+                  <tr>
+                    <th class="score-header">
+                      {{lookup ../data.static.content.moduleList this.type}}{{lookup ../data.static.content.normReferenced this.type}}
+                    </th>
+                    <th colspan="2">
+                      {{#ifvalue this.type equals="brainGame"}}
+                      <span>Medium</span>/Advanced
+                      {{/ifvalue}}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each this.values}}
+                  <tr>
+                    <td>{{ this.name }}</td>
+                    <td></td>
+                    <td>{{ this.value }}</td>
+                  </tr>
+                  {{~/each}}
+                </tbody>
+              </table>
+            {{/default}}
+          {{/switch}}
+        {{/if}}
+      {{~/each}}
+    </div>
+  </section>
+  <footer id="pageFooter" class="page-footer">
+    <div class="description">{{{ data.static.content.description }}}</div>
+    <div class="copyright">{{{ data.static.content.footer }}}</div>
+  </footer>
+</body>
+
+</html>

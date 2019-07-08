@@ -1,0 +1,117 @@
+{
+    "totalScore": "55%",
+    "link": "https://SAAS1-6030-FACT-SHEET-V1.harverdev.com/59edd755af0f8924cdaeff89/vacancies/5c8a75453342b30046394546/5c9e02f27e5a53000c4c1b4b",
+    "candidateInfoData": [
+        {"key": "first_name", "value": "John"},
+        {"key": "middle_name", "value": "Fucking"},
+        {"key": "last_name", "value": "Wick"},
+        {"key": "city", "value": "NY?"},
+        {"key": "country", "value": "USA"},
+        {"key": "phone_number", "value": "1234567"},
+        {"key": "email", "value": "john_baba_yaga@gmail.com"},
+        {"key": "address", "value": "Mill Neck, NY, United States"},
+        {"key": "address_addition", "value": ""},
+        {"key": "zip", "value": "11560"},
+        {"key": "birth_date", "value": "01-01-1973"},
+        {"key": "gender", "value": "Man"}
+    ],
+    "additionalQuestionData": [
+        {
+            "question": "qLorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro ea cumque magni in totam voluptate provident, non neque! Voluptates, tenetur non. Consequuntur hic ullam sunt saepe natus facilis vitae.",
+            "answer": "answer"
+        }
+    ],
+    "moduleResults": [
+        {
+            "type": "workAvailability",
+            "hours": 1,
+            "values": [
+                {
+                    "name": "Monday",
+                    "value": null
+                },
+                {
+                    "name": "etc",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "type": "location",
+            "values": [
+                {
+                    "name": "location 1",
+                    "value": null
+                },
+                {
+                    "name": "location 2",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "type": "documentUpload",
+            "values": [
+                {
+                    "name": "Cover Letter",
+                    "value": "Yes"
+                },
+                {
+                    "name": "Resume",
+                    "value": "No"
+                }
+            ]
+        },
+        {
+            "type": "brainGame",
+            "values": [
+                {
+                    "name": "Overall Score",
+                    "value": "89%"
+                },
+                {
+                    "name": "Numerical Reasoning",
+                    "value": "89%"
+                },
+                {
+                    "name": "Cognitive Spatial Ability",
+                    "value": "89%"
+                },
+                {
+                    "name": "Logical Reasoning",
+                    "value": "89%"
+                }
+            ]
+        },
+        {
+            "type": "multitasking",
+            "values": [
+                {
+                    "name": "Overall Score",
+                    "value": "89%"
+                },
+                {
+                    "name": "Visual Task Switching",
+                    "value": "89%"
+                },
+                {
+                    "name": "Alphanumerical Task Switching",
+                    "value": "89%"
+                }
+            ]
+        },
+        {
+            "type": "openQuestions",
+            "values": [
+                {
+                    "name": "When are you available to start working?",
+                    "value": "07-03-19"
+                },
+                {
+                    "name": "When are you available to start working?",
+                    "value": "07-03-19"
+                }
+            ]
+        }
+    ]
+  }

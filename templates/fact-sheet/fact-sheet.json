@@ -1,0 +1,58 @@
+{
+    "data": {
+        "header": {
+            "title": "Candidate Scoring Overview"
+        },
+        "content": {
+            "matching_score": "Matching Score",
+            "candidate_link": "Candidate Link",
+            "description": "* Norm Referenced Score",
+            "footer": "HARVER B.V. - THIS DOCUMENT CONTAINS PROPRIETARY INFORMATION AND IS STRICTLY PRIVATE AND CONFIDENTIAL",
+            "hours_text": " hours per week",
+            "personalInfo": {
+                "title": "Personal Information",
+                "infoFields": {
+                    "First_Name": "First Name",
+                    "Middle_Name": "Middle Name",
+                    "Last_Name": "Last Name",
+                    "City": "City",
+                    "Country": "Country of Residence",
+                    "Phone_Number": "Phone Number",
+                    "Email": "Email Address",
+                    "Address": "Address",
+                    "Address_addition": "Address Addition",
+                    "ZIP__Postal_code": "Zip / Postal code",
+                    "Birth_date": "Birth Date",
+                    "Gender": "Gender",
+                    "State__Province__Region": "State / Province / Region"
+                }
+            },
+            "moduleList": {
+                "candidateInfoAdditional": "Additional Questions",
+                "personalityQuestionnaire": "Personality Questionnaire",
+                "openQuestions": "Open Questions",
+                "brainGame": "Cognitive Ability",
+                "sjt": "SJT",
+                "culturalFit": "Cultural Fit",
+                "typing": "Typing",
+                "languageTest": "Language Test",
+                "multitasking": "Multitasking",
+                "systemDiagnostics": "System Diagnostics",
+                "videoInterview": "Video Interview",
+                "videoPitch": "Video Pitch",
+                "competencies": "Competencies",
+                "documentUpload": "Document Upload",
+                "videoPortfolio": "Video Portfolio",
+                "location": "Applied for Locations:",
+                "workAvailability": "Work Availability",
+                "simplifiedSjt": "Mini SJT",
+                "locationQuestions": "Location Questions"
+            },
+            "normReferenced": {
+                "multitasking": "*",
+                "typing": "*",
+                "brainGame": "*"
+            }
+        }
+    }
+}
