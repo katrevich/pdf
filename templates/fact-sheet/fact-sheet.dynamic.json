@@ -17,7 +17,7 @@
     ],
     "additionalQuestionData": [
         {
-            "question": "qLorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro ea cumque magni in totam voluptate provident, non neque! Voluptates, tenetur non. Consequuntur hic ullam sunt saepe natus facilis vitae.",
+            "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro ea cumque magni in totam voluptate provident, non neque! Voluptates, tenetur non. Consequuntur hic ullam sunt saepe natus facilis vitae.",
             "answer": "answer"
         }
     ],
@@ -110,6 +110,63 @@
                 {
                     "name": "When are you available to start working?",
                     "value": "07-03-19"
+                }
+            ]
+        },
+        {
+            "type": "assignment",
+            "score": 60,
+            "note": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro ea cumque magni in totam voluptate provident, non neque!",
+            "values": [
+                {
+                    "title": "Assignment Module One",
+                    "duration": 5.5,
+                    "actualDuration": 0.16,
+                    "questionsAndAnswers": [
+                        {
+                            "index": 1,
+                            "question": "Question 2",
+                            "answer": "Answer for Question 2",
+                            "comments": [
+                                {
+                                    "name": "User",
+                                    "text": "Comment 1",
+                                    "date": "17-07-2019 - 16:08"
+                                }
+                            ]
+                        },
+                        {
+                            "index": 2,
+                            "question": "Question 3",
+                            "answer": "Answer for Question 3",
+                            "comments": [
+                                {
+                                    "name": "User",
+                                    "text": "Comment  2",
+                                    "date": "17-07-2019 - 16:08"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Assignment Module Two",
+                    "duration": null,
+                    "actualDuration": null,
+                    "questionsAndAnswers": [
+                        {
+                            "index": 1,
+                            "question": "Assignment Two, Question 1",
+                            "answer": "Answer for Question 1, Assignment Two",
+                            "comments": []
+                        },
+                        {
+                            "index": 2,
+                            "question": "Assignment Two, Question Two",
+                            "answer": "Answer for Question 2, Assignment Two",
+                            "comments": []
+                        }
+                    ]
                 }
             ]
         }
