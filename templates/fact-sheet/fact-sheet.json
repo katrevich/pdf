@@ -46,7 +46,9 @@
                 "location": "Applied for Locations:",
                 "workAvailability": "Work Availability",
                 "simplifiedSjt": "Mini SJT",
-                "locationQuestions": "Location Questions"
+                "locationQuestions": "Location Questions",
+                "virtualInterview": "Virtual Interview",
+                "assignment": "Assignment Modules"
             },
             "normReferenced": {
                 "multitasking": "*",

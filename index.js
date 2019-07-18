@@ -59,6 +59,7 @@ app.get('/pdf', (req, res, next) => {
           <h4>${template}</h4>
           <a href="/pdf/html-pdf/${template}">html-pdf</a>
           <a href="/pdf/puppeteer/${template}">puppeteer</a>
+          <a href="/pdf/html/${template}">html</a>
         </li>
       `)}
       </ul>
@@ -105,7 +106,7 @@ app.get('/pdf/puppeteer/:name', async (req, res, next) => {
     const page = await browser.newPage();
     page.setContent(html);
     const buffer = await page.pdf({
-      format: 'A4', 
+      format: 'A4',
       margin: {
         top: 50,
         bottom: 50,
@@ -122,7 +123,24 @@ app.get('/pdf/puppeteer/:name', async (req, res, next) => {
     res.send('Error');
     next();
   }
-})
+});
+
+app.get('/pdf/html/:name', (req, res, next) => {
+  const { name } = req.params;
+
+  try {
+    const html = getHtml(name);
+
+    res.type('html');
+    res.send(html);
+
+  } catch(err) {
+    console.log('Error: ', err);
+    res.status(404);
+    res.send('Error');
+    next();
+  }
+});
 
 
 app.listen(3001);
