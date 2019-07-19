@@ -1,20 +1,11 @@
 {
     "totalScore": "55%",
     "link": "https://SAAS1-6030-FACT-SHEET-V1.harverdev.com/59edd755af0f8924cdaeff89/vacancies/5c8a75453342b30046394546/5c9e02f27e5a53000c4c1b4b",
-    "candidateInfoData": [
-        {"key": "first_name", "value": "John"},
-        {"key": "middle_name", "value": "Fucking"},
-        {"key": "last_name", "value": "Wick"},
-        {"key": "city", "value": "NY?"},
-        {"key": "country", "value": "USA"},
-        {"key": "phone_number", "value": "1234567"},
-        {"key": "email", "value": "john_baba_yaga@gmail.com"},
-        {"key": "address", "value": "Mill Neck, NY, United States"},
-        {"key": "address_addition", "value": ""},
-        {"key": "zip", "value": "11560"},
-        {"key": "birth_date", "value": "01-01-1973"},
-        {"key": "gender", "value": "Man"}
-    ],
+    "candidateInfoData": {
+    "First_Name": "John",
+    "Middle_Name": "Fucking",
+    "Last_Name": "Wick"
+},
     "additionalQuestionData": [
         {
             "question": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam porro ea cumque magni in totam voluptate provident, non neque! Voluptates, tenetur non. Consequuntur hic ullam sunt saepe natus facilis vitae.",

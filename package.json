@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --inspect index ",
+    "start": "node index ",
+    "start-and-inspect": "node index --inspect",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
